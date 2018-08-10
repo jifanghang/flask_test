@@ -12,5 +12,14 @@ def index():
 def hello_name(user):
     return render_template('hello.html', name = user)
 
+@app.route('/hello/<int:score>')
+def hello_score(score):
+    return render_template('hello.html', marks = score)
+
+@app.route('/result')
+def result():
+    results = {'phy':50, 'che':60, 'maths':70}
+    return render_template('result.html', result = results)
+
 if __name__ == '__main__':
     app.run(debug = True)
