@@ -1,7 +1,7 @@
 #Flask - Sessions
 from flask import Flask, session, url_for, escape, request, redirect
 app = Flask(__name__)
-app.secret_key = 'any random string'
+app.secret_key = 'Jamie'
 
 @app.route('/')
 def index():
@@ -19,12 +19,12 @@ def login():
         return redirect(url_for('index'))
     return '''
 	
-    <form action = "" method = "post">
-       <p><input type = text name = username/></p>
-       <p<<input type = submit value = Login/></p>
-    </form>
+   <form action = "" method = "post">
+      <p><input type = text name = username/></p>
+      <p><input type = submit value = Login/></p>
+   </form>
 	
-    '''
+   '''
 
 @app.route('/logout')
 def logout():
